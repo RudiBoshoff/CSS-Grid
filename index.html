@@ -13,12 +13,13 @@
     <div class="header"><h2>Header with Background Image</h2></div>
     <div class="navigation">
       <ul>
-        <li><a  href="#">Home</a></li>
-        <li><a  href="#">About</a></li>
-        <li><a  href="#">Gallery</a></li>
-        <li><a  href="#">Directions</a></li>
-        <li><a  href="#">Contact Us</a></li>
-        <li><a  href="#">Book Now</a></li>
+        <li class="menu"><button>&#9776;</button></li>
+        <li class="menu-item-1 hide"><a  href="#">Home</a></li>
+        <li class="menu-item-2 hide"><a  href="#">About</a></li>
+        <li class="menu-item-3 hide" ><a  href="#">Gallery</a></li>
+        <li class="menu-item-4 hide"><a  href="#">Directions</a></li>
+        <li class="menu-item-5 hide"><a  href="#">Contact Us</a></li>
+        <li class="menu-item-6 hide"><a  href="#">Book Now</a></li>
       </ul>
     </div>
     <div class="sidebar">
@@ -39,6 +40,23 @@
      </div>
     <div class="footer"> Footer </div>
   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  const menu = $(".menu");
+  menu.click(function() {toggleMenu()});
 
+  function toggleMenu() {
+    console.log("button was clicked");
+    $(".menu-item-1").toggleClass("hide");
+    $(".menu-item-2").toggleClass("hide");
+    $(".menu-item-3").toggleClass("hide");
+    $(".menu-item-4").toggleClass("hide");
+    $(".menu-item-5").toggleClass("hide");
+    $(".menu-item-6").toggleClass("hide");
+    // alternatively could give the class "menu-item" to each menu item then convert the node list to an array and loop through the array in order to toggle the class "hide" with each element of the node list.
+  }
+})
+</script>
 </body>
 </html>
