@@ -88,8 +88,7 @@
   text-align: center;
 }
 
-button {
-  border: none;
+.menu {
   color: white;
   font-size: 30px;
   cursor: pointer;
